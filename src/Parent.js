@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import './App.css';
 // import './child.css';
-import Child from './Child'
+import Child from './Child';
+import ValueContext from './ValueContext'
 
-function Parent(props) {
-
+function Parent() {
+  let num = useContext(ValueContext)
   return  (
     <div>
-        <h2>This is Parent component {props.num}</h2>
-        <Child num={props.num}></Child>
+        <h2>This is Parent component {num[0]}</h2>
+        <Child num={num[0]}></Child>
+        {/* <button onClick={ ()=> num[1](++num[0 ]) }>Click Here!</button> */}
     </div>
   );
 }
